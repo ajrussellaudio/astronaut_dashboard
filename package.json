@@ -1,0 +1,19 @@
+{
+  "name": "astronaut_dashboard",
+  "version": "1.0.0",
+  "description": "A dashboard for an astronaut",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajrussellaudio/astronaut_dashboard.git"
+  },
+  "author": "Alan Russell, David Morrison, Hannah Stewart, Michael Snaddon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajrussellaudio/astronaut_dashboard/issues"
+  },
+  "homepage": "https://github.com/ajrussellaudio/astronaut_dashboard#readme"
+}
