@@ -34,5 +34,7 @@ NewsFeed.prototype.all = function(callback){
   })   
 }
 
+
+
 module.exports = NewsFeed;
 
