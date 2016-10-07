@@ -5,6 +5,7 @@ ApiRequest.prototype.makeRequest = function(url, callback) {
   var request = new XMLHttpRequest()
   request.open("GET", url);
   request.onload = function() {
+    console.log("The status is : ",this.status)
     if (this.status !== 200) return;
     var jsonString = this.responseText;
     var results = JSON.parse(jsonString);
