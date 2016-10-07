@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/ajrussellaudio/astronaut_dashboard/issues"
   },
-  "homepage": "https://github.com/ajrussellaudio/astronaut_dashboard#readme"
+  "homepage": "https://github.com/ajrussellaudio/astronaut_dashboard#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "webpack": "^1.13.2"
+  }
 }
