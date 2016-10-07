@@ -26,9 +26,7 @@ UI.prototype.weatherRender = function( weather ) {
   div.appendChild(description)
 
   var container = document.querySelector("#container");
-  container.appendChild( div )
-
-  console.log( weather);
+  container.appendChild( div );
 }
 
 UI.prototype.newsRender = function( news ) {
