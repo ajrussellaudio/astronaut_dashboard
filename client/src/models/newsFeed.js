@@ -29,7 +29,7 @@ NewsFeed.prototype.all = function(callback){
     if(this.status !== 200) return;
     var jsonString = this.responseText;
     var jsonResponse = JSON.parse(jsonString);
-    newsFeed = parseToNewsItems(jsonResponse);
+    newsFeed = self.parseToNewsItems(jsonResponse);
     callback(newsFeed);
   })   
 }

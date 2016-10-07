@@ -16,6 +16,7 @@ WeatherApi.prototype.get = function(callback) {
 
 WeatherApi.prototype.populateWeather = function(results) {
   var weather = new Weather(results.weather[0]);
+  console.log( weather );
 }
 
 WeatherApi.prototype.makeRequest = function(url, callback) {
