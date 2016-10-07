@@ -1,7 +1,7 @@
 var express = require( 'express' );
 var app = express();
 var path = require( 'path' );
-var WeatherApi = require( './api/weather_api' );
+var WeatherApi = require( './apis/weatherApi' );
 
 app.use( express.static( 'client/build' ) );
 
