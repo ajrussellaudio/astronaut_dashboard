@@ -1,5 +1,8 @@
 var WeatherApi = require( '../models/weatherApi' );
-var NewsFeed = require( '../models/newsFeed' );
+var NewsFeedUI = require( './newsFeedUI' );
+
+
+
 
 var UI = function() {
   var body = document.querySelector('body')
@@ -8,8 +11,8 @@ var UI = function() {
   body.appendChild(container)
 
   var weather = new WeatherApi();
-  var newsFeed = new NewsFeed();
-  newsFeed.all( this.newsRender );
+  new NewsFeedUI();
+  // newsFeed.all( this.newsRender );
   weather.get( this.weatherRender );
 }
 
