@@ -1,4 +1,4 @@
-var WeatherApi = require( '../models/weatherApi' );
+var WeatherUI = require( './weatherUI' );
 var NewsFeedUI = require( './newsFeedUI' );
 
 
@@ -10,10 +10,10 @@ var UI = function() {
   container.setAttribute("id", "container")
   body.appendChild(container)
 
-  var weather = new WeatherApi();
+  new WeatherUI();
   new NewsFeedUI();
   // newsFeed.all( this.newsRender );
-  weather.get( this.weatherRender );
+  // weather.get( this.weatherRender );
 }
 
 UI.prototype.weatherRender = function( weather ) {
@@ -32,36 +32,36 @@ UI.prototype.weatherRender = function( weather ) {
   container.appendChild( div );
 }
 
-UI.prototype.newsRender = function( news ) {
-  var div = document.createElement( "div" );
-  div.setAttribute( "id", "news-feed" );
+// UI.prototype.newsRender = function( news ) {
+//   var div = document.createElement( "div" );
+//   div.setAttribute( "id", "news-feed" );
 
-  var children = [];
+//   var children = [];
 
-  news.forEach( function( newsItem ) {
-    var itemDiv = document.createElement( "div" );
-    itemDiv.setAttribute( "class", "news-item" );
+//   news.forEach( function( newsItem ) {
+//     var itemDiv = document.createElement( "div" );
+//     itemDiv.setAttribute( "class", "news-item" );
 
-    var headline = document.createElement( "h3" );
-    headline.innerText = newsItem.headline;
-    itemDiv.appendChild( headline );
+//     var headline = document.createElement( "h3" );
+//     headline.innerText = newsItem.headline;
+//     itemDiv.appendChild( headline );
 
-    var description = document.createElement( "p" );
-    description.innerText = newsItem.description;
-    itemDiv.appendChild( description );
+//     var description = document.createElement( "p" );
+//     description.innerText = newsItem.description;
+//     itemDiv.appendChild( description );
 
-    var img = document.createElement( "img" );
-    img.width = 70;
-    img.height = 70;
-    img.src = newsItem.imageUrl;
-    itemDiv.appendChild( img );
+//     var img = document.createElement( "img" );
+//     img.width = 70;
+//     img.height = 70;
+//     img.src = newsItem.imageUrl;
+//     itemDiv.appendChild( img );
 
-    div.appendChild( itemDiv );
-  });
+//     div.appendChild( itemDiv );
+//   });
 
-  var container = document.querySelector("#container");
-  container.appendChild( div )
+//   var container = document.querySelector("#container");
+//   container.appendChild( div )
 
-}
+// }
 
 module.exports = UI;

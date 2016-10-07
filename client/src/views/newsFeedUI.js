@@ -2,7 +2,7 @@ var NewsFeed = require( '../models/newsFeed' );
 
 var NewsFeedUI = function(){
   var newsFeed = new NewsFeed();
-  newsFeed.all(this.render)
+  newsFeed.all(this.render);
 
 }
 
