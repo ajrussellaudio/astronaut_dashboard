@@ -25,7 +25,7 @@ NewsFeed.prototype.all = function(callback){
   var url = "https://newsapi.org/v1/articles?source=abc-news-au&apiKey=3783803bc3a8459792d27a6ec2340bb7";
   var self = this;
   this.makeGetRequest(url, function(){
-    console.log(this.status);
+    // console.log(this.status);
     if(this.status !== 200) return;
     var jsonString = this.responseText;
     var jsonResponse = JSON.parse(jsonString);
