@@ -1,4 +1,4 @@
-var diaryEntry = require("./diaryEntry");
+var DiaryEntry = require("./diaryEntry");
 
 var DiaryFeed = function(){
 
@@ -14,7 +14,7 @@ DiaryFeed.prototype.makeRequest = function(url, callback){
 DiaryFeed.prototype.parseToDiaryEntries = function(jsonArray){
   var entries = []
   jsonArray.forEach(function(entry){
-    entries.push(new diaryEntry(entry))
+    entries.push(new DiaryEntry(entry))
   })
   return entries;
 }
