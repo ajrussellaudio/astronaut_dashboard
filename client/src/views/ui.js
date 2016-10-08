@@ -38,6 +38,9 @@ UI.prototype.newsRender = function( news ) {
   news.forEach( function( newsItem ) {
     var itemDiv = document.createElement( "div" );
     itemDiv.setAttribute( "class", "news-item" );
+    itemDiv.onclick = function(){
+      console.log("click")
+    }
 
     var headline = document.createElement( "h3" );
     headline.innerText = newsItem.headline;
