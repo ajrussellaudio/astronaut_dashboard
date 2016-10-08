@@ -6,11 +6,16 @@ var DiaryEntryUI = function() {
   titleInput.name = "title";
   // input type date is a thing
 
+  var contentInput = document.createElement( "input" );
+  contentInput.type = "textarea";
+  contentInput.rows = 6;
+  contentInput.name = "content";
+
   var submit = document.createElement('input');
   submit.type = 'button'
   submit.value = "Submit";
   submit.onclick = function(){
-    console.log('we win mutha fuckker')
+    console.log( titleInput.value, contentInput.value );
   }
 
   // var submit = submit button;
@@ -22,9 +27,16 @@ var DiaryEntryUI = function() {
   var form = document.createElement( "form" );
 
   form.appendChild( titleInput );
-  form.appendChild( submit);
-  var divDiary = document.querySelector("#diary");
+  form.appendChild( contentInput );
+  form.appendChild( submit );
+
+  var divDiary = document.createElement( "div" );
+  divDiary.id = "diary";
+
   divDiary.appendChild(form);
+
+  var body = document.querySelector( "body" );
+  body.appendChild( divDiary );
 }
 
 module.exports = DiaryEntryUI;
