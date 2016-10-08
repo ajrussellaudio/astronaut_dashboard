@@ -8,8 +8,8 @@ var UI = function() {
   container.setAttribute("id", "container")
   body.appendChild(container)
 
-  new WeatherUI();
-  new NewsFeedUI();
+  // new WeatherUI();
+  // new NewsFeedUI();
   new DiaryFormUI();
   // newsFeed.all( this.newsRender );
   // weather.get( this.weatherRender );

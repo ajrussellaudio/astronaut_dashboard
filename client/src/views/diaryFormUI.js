@@ -8,14 +8,16 @@ var DiaryEntryUI = function() {
 
   var contentInput = document.createElement( "input" );
   contentInput.type = "textarea";
-  contentInput.rows = 6;
   contentInput.name = "content";
+
+  var dateInput = document.createElement( "input" );
+  dateInput.type = "date";
 
   var submit = document.createElement('input');
   submit.type = 'button'
   submit.value = "Submit";
   submit.onclick = function(){
-    console.log( titleInput.value, contentInput.value );
+    console.log( titleInput.value, contentInput.value, dateInput.value );
   }
 
   // var submit = submit button;
@@ -28,6 +30,7 @@ var DiaryEntryUI = function() {
 
   form.appendChild( titleInput );
   form.appendChild( contentInput );
+  form.appendChild( dateInput );
   form.appendChild( submit );
 
   var divDiary = document.createElement( "div" );
