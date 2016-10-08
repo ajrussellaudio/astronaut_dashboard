@@ -1,6 +1,6 @@
 var NewsItem = function(options){
   this.headline = options.title;
-  this.decription = options.description;
+  this.description = options.description;
   this.url = options.url;
   this.imageUrl = options.urlToImage;
   this.timeStamp = options.publishedAt;

@@ -1,15 +1,16 @@
-var WeatherApi = require( '../models/weatherApi' );
-var NewsFeed = require( '../models/newsFeed' );
+var WeatherUI = require( './weatherUI' );
+var NewsFeedUI = require( './newsFeedUI' );
 
 var UI = function() {
-  var newsFeed = new NewsFeed();
-  var weather = new WeatherApi();
-  newsFeed.all( this.render );
-  weather.get( this.render );
-}
+  var body = document.querySelector('body')
+  var container = document.createElement('div');
+  container.setAttribute("id", "container")
+  body.appendChild(container)
 
-UI.prototype.render = function( thing ) {
-  console.log( thing );
+  new WeatherUI();
+  new NewsFeedUI();
+  // newsFeed.all( this.newsRender );
+  // weather.get( this.weatherRender );
 }
 
 module.exports = UI;
