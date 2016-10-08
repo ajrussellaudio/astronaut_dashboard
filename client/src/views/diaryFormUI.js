@@ -17,13 +17,8 @@ var DiaryEntryUI = function() {
   submit.type = 'button'
   submit.value = "Submit";
   submit.onclick = function(){
-    console.log( titleInput.value, contentInput.value, dateInput.value );
-  }
-
-  // var submit = submit button;
-  // onclick = function() { new DiaryEntry( all the stuff above ) }
-  // take that new thing and Stringify/POST
- 
+    this.buttonClickHandler(titleInput, contentInput, dateInput);
+  }.bind(this);
 
   //THEN
   var form = document.createElement( "form" );
@@ -40,6 +35,18 @@ var DiaryEntryUI = function() {
 
   var body = document.querySelector( "body" );
   body.appendChild( divDiary );
+}
+
+
+DiaryEntryUI.prototype.buttonClickHandler = function(titleInput, contentInput, dateInput) {
+    var jsonDiaryEntry = {
+      title: titleInput.value,
+      content: contentInput.value,
+      date: dateInput.value
+    }
+
+    var jsonDiaryString = JSON.stringify(jsonDiaryEntry);
+    console.log(jsonDiaryString);
 }
 
 module.exports = DiaryEntryUI;
