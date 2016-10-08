@@ -5,7 +5,7 @@ var DiaryEntryUI = function() {
   titleInput.type = "text";
   titleInput.name = "title";
 
-  var submit = submit button;
+  // var submit = submit button;
   // onclick = function() { new DiaryEntry( all the stuff above ) }
   // take that new thing and Stringify/POST
 

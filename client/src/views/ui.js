@@ -1,6 +1,6 @@
 var WeatherUI = require( './weatherUI' );
 var NewsFeedUI = require( './newsFeedUI' );
-var NewsFeedUI = require( './diaryFormUI' );
+var DiaryFormUI = require( './diaryFormUI' );
 
 var UI = function() {
   var body = document.querySelector('body')
