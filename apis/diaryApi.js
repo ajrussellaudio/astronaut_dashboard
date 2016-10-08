@@ -14,6 +14,7 @@ var DiaryApi = function(app){
   });
 
   app.post('/api/diary', function(req,res){
+    console.log(req.body);
     query.createEntry(req.body.diary, function(){
       query.getAll(function(data){
         res.json(data)

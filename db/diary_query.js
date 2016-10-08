@@ -5,7 +5,7 @@ var DiaryQuery = function() {
 }
 
 DiaryQuery.prototype.getAll = function (onQueryFinished){
-  console.log('alansacunt')
+  // console.log('alansacunt')
   MongoClient.connect(this.url, function(err, db) {
     var collection = db.collection('diary');
     collection.find().toArray(function(err, docs) {
@@ -18,9 +18,9 @@ DiaryQuery.prototype.createEntry = function(entry, onQueryFinished){
   MongoClient.connect(this.url, function(err, db){
     if(db){
       var collection = db.collection('diary');
-      console.log(entry);
+      // console.log(entry);
       collection.insertOne(entry, function(err, res){
-        console.log("inserted entry");
+        // console.log("inserted entry");
         onQueryFinished();
       });
     }

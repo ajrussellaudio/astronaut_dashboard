@@ -5,6 +5,13 @@
   <script src="bundle.js"></script>
 </head>
 <body>
-  
+  <div id="diary">  
+  <form action="/api/diary" method="post">
+    <input type="text" name="title">
+    <input type="textarea" name="content">
+    <input type="text" name="date">
+    <input type="submit" value="Submit">
+  </form>
+  </div>
 </body>
 </html>
