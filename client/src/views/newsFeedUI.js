@@ -33,6 +33,7 @@ NewsFeedUI.prototype.render = function(news){
 
     div.appendChild( itemDiv );
   });
+  
   var container = document.querySelector("#container");
   container.appendChild( div )
 }

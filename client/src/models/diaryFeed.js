@@ -22,13 +22,13 @@ DiaryFeed.prototype.parseToDiaryEntries = function(jsonArray){
 DiaryFeed.prototype.all = function(callback){
   var url = "http://localhost:3000/api/diary";
   var self = this;
-  makeRequest(url, function(req,res){
+  this.makeRequest(url, function(req,res){
     if(this.status !== 200);
     var jsonString = this.responseText;
-    var jsonResponse = JSON.parse(response);
-    var diaryFeed = self.parseToDiaryEntries();
+    var jsonResponse = JSON.parse(jsonString);
+    var diaryFeed = self.parseToDiaryEntries(jsonResponse);
     callback(diaryFeed);
   });
 };
 
-
+module.exports = DiaryFeed;

@@ -1,13 +1,13 @@
 var DiaryFeed = require("../models/diaryFeed")
 
 
-var DiaryFeed = function(){
+var DiaryFeedUI = function(){
   var diaryFeed = new DiaryFeed();
   diaryFeed.all(this.render);
 };
 
-DiaryFeed.prototype.render = function( diaryFeed ) { // [{log1}, {log2}]
-  
+DiaryFeedUI.prototype.render = function( diaryFeed ) { 
+
   // widget box
   var div = document.createElement('div');
   div.setAttribute('id', 'diaryFeed');
@@ -32,6 +32,10 @@ DiaryFeed.prototype.render = function( diaryFeed ) { // [{log1}, {log2}]
     diaryEntryBox.appendChild(content);
     div.appendChild(diaryEntryBox);
   })
+
+  var container = document.querySelector("#container");
+  container.appendChild( div )
 }
 
 
+module.exports = DiaryFeedUI;
