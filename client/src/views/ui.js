@@ -38,18 +38,10 @@ UI.prototype.weatherRender = function( weather ) {
 
 //   var children = [];
 
-<<<<<<< HEAD
-  news.forEach( function( newsItem ) {
-    var itemDiv = document.createElement( "div" );
-    itemDiv.setAttribute( "class", "news-item" );
-    itemDiv.onclick = function(){
-      console.log("click")
-    }
-=======
+
 //   news.forEach( function( newsItem ) {
 //     var itemDiv = document.createElement( "div" );
 //     itemDiv.setAttribute( "class", "news-item" );
->>>>>>> aea8dca60499d6653e266fb6b62bf0d9d5aeec50
 
 //     var headline = document.createElement( "h3" );
 //     headline.innerText = newsItem.headline;
