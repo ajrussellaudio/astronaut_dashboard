@@ -1,9 +1,9 @@
-var WeatherApi = require( '../models/weatherApi' );
+var Weather = require( '../models/weather' );
 
 
 var WeatherUI = function(){
-  var weatherApi = new WeatherApi();
-  weatherApi.get(this.render);
+  var weather = new Weather({});
+  weather.get(this.render);
 }
 
 WeatherUI.prototype.render = function( weather ) {
