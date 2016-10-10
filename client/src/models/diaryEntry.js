@@ -13,6 +13,8 @@ DiaryEntry.prototype.save = function(){
   console.log(apiRequester)
   apiRequester.makePostRequest(url, {
     "diary": this
+  }, function() {
+    window.location.reload();
   })
 }
 
