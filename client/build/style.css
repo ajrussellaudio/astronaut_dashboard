@@ -1,0 +1,36 @@
+html{
+  background-color: black;
+}
+
+*{
+  color:white;
+}
+
+#container {
+  display:flex;
+}
+#widgets {
+  overflow-y: scroll;
+  height:700px;
+  order: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dashboard-widget{
+  margin: 30px;
+  border: 1px solid magenta;
+  overflow-y: scroll;
+  height:300px;
+  width:300px;
+
+}
+
+#news-feed{
+  height:700px;
+  width: 400px;
+  overflow-y: scroll;
+  order: 0;
+}

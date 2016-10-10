@@ -2,15 +2,18 @@ var DiaryEntry = require( '../models/diaryEntry.js' );
 
 var DiaryEntryUI = function() {
   var titleInput = document.createElement( "input" );
+  titleInput.setAttribute("id","titleInput");
   titleInput.type = "text";
   titleInput.name = "title";
   // input type date is a thing
 
   var contentInput = document.createElement( "input" );
+  contentInput.setAttribute("id","contentInput");
   contentInput.type = "textarea";
   contentInput.name = "content";
 
   var dateInput = document.createElement( "input" );
+  dateInput.setAttribute("id","dateInput");
   dateInput.type = "date";
 
   var submit = document.createElement('input');
@@ -33,12 +36,13 @@ var DiaryEntryUI = function() {
   form.appendChild( submit );
 
   var divDiary = document.createElement( "div" );
-  divDiary.id = "diary";
+  divDiary.id = "diary-writer";
+  divDiary.setAttribute("class", "dashboard-widget")
 
   divDiary.appendChild(form);
 
-  var body = document.querySelector( "body" );
-  body.appendChild( divDiary );
+  var widgetContainer = document.querySelector( "#widgets" );
+  widgetContainer.appendChild( divDiary );
 }
 
 DiaryEntryUI.prototype.buttonClickHandler = function(diaryEntry){

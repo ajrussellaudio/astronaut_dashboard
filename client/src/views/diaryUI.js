@@ -10,7 +10,8 @@ DiaryFeedUI.prototype.render = function( diaryFeed ) {
 
   // widget box
   var div = document.createElement('div');
-  div.setAttribute('id', 'diaryFeed');
+  div.setAttribute('id', 'diary-feed');
+  div.setAttribute('class', 'dashboard-widget');
 
   //for every entry in diary feed
   diaryFeed.forEach(function(diaryEntry){
@@ -33,7 +34,7 @@ DiaryFeedUI.prototype.render = function( diaryFeed ) {
     div.appendChild(diaryEntryBox);
   })
 
-  var container = document.querySelector("#container");
+  var container = document.querySelector("#widgets");
   container.appendChild( div )
 }
 

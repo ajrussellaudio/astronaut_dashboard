@@ -8,7 +8,8 @@ var WeatherUI = function(){
 
 WeatherUI.prototype.render = function( weather ) {
   var div = document.createElement("div");
-  div.setAttribute("id", "weather-widget");
+  div.setAttribute("id", "weather");
+  div.setAttribute("class","dashboard-widget")
 
   var icon = document.createElement("img");
   icon.src = "http://openweathermap.org/img/w/"+ weather.icon +".png";
@@ -18,8 +19,8 @@ WeatherUI.prototype.render = function( weather ) {
   description.innerText = weather.description;
   div.appendChild(description)
 
-  var container = document.querySelector("#container");
-  container.appendChild( div );
+  var widgetContainer = document.querySelector("#widgets");
+  widgetContainer.appendChild( div );
 }
 
 module.exports = WeatherUI;
