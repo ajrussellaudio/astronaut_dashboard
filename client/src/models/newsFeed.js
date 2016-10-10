@@ -1,4 +1,10 @@
-var NewsItem = require('./NewsItem.js');
+var NewsItem = function(options){
+  this.headline = options.title;
+  this.description = options.description;
+  this.url = options.url;
+  this.imageUrl = options.urlToImage;
+  this.timeStamp = options.publishedAt;
+}
 
 var NewsFeed = function(){
 
