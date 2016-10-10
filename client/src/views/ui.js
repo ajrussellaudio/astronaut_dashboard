@@ -15,8 +15,6 @@ var UI = function() {
   new NewsFeedUI();
   new DiaryUI();
   new DiaryFormUI();
-  // newsFeed.all( this.newsRender );
-  // weather.get( this.weatherRender );
-}
+};
 
 module.exports = UI;

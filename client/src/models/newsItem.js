@@ -1,36 +1,27 @@
+var ApiRequester = require("./api_request")
+
 var NewsItem = function(options){
   this.headline = options.title;
   this.description = options.description;
   this.url = options.url;
   this.imageUrl = options.urlToImage;
   this.timeStamp = options.publishedAt;
-}
-
-var NewsFeed = function(){
-
 };
 
-NewsFeed.prototype.makeGetRequest = function(url, callback){
-  var request = new XMLHttpRequest;
-  request.open("GET", url);
-  request.onload = callback;
-  request.send();
-}
-
-NewsFeed.prototype.parseToNewsItems = function(jsonRep){
+NewsItem.prototype.parseToNewsItems = function(jsonRep){
   var articles = jsonRep.articles;
   newsFeed = [];
   articles.forEach(function(article){
     newsFeed.push(new NewsItem(article));
   })
   return newsFeed;
-
 }
 
-NewsFeed.prototype.all = function(callback){
+NewsItem.prototype.all = function(callback){
+  var apiRequester = new ApiRequester();
   var url = "https://newsapi.org/v1/articles?source=abc-news-au&apiKey=3783803bc3a8459792d27a6ec2340bb7";
   var self = this;
-  this.makeGetRequest(url, function(){
+  apiRequester.makeRequest(url, function(){
     // console.log(this.status);
     if(this.status !== 200) return;
     var jsonString = this.responseText;
@@ -40,7 +31,4 @@ NewsFeed.prototype.all = function(callback){
   })   
 }
 
-
-
-module.exports = NewsFeed;
-
+module.exports = NewsItem;
