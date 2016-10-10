@@ -10,8 +10,8 @@ var DiaryEntry = function(options){
 DiaryEntry.prototype.save = function(){
   var apiRequester = new ApiRequester();
   var url= "http://localhost:3000/api/diary";
-  apiRequester.makePostRequest(url, {
-    "diary": this
+  apiRequester.makePostRequest(url, {"diary": this }, function() {
+    window.location.reload();
   });
 }
 
