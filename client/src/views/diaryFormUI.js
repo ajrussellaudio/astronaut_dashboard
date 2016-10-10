@@ -44,9 +44,11 @@ DiaryEntryUI.prototype.buttonClickHandler = function(titleInput, contentInput, d
       content: contentInput.value,
       date: dateInput.value
     }
+    var diaryEntry = new DiaryEntry(jsonDiaryEntry);
+    diaryEntry.save();
 
-    var jsonDiaryString = JSON.stringify(jsonDiaryEntry);
-    console.log(jsonDiaryString);
+    // var jsonDiaryString = JSON.stringify(jsonDiaryEntry);
+    console.log(diaryEntry);
 }
 
 module.exports = DiaryEntryUI;

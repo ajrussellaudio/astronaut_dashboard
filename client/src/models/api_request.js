@@ -14,7 +14,8 @@ ApiRequest.prototype.makeRequest = function(url, callback) {
   request.send();
 }
 
-ApiRequest.prototype.makePostRequest = function(url, jsonString){
+ApiRequest.prototype.makePostRequest = function(url, jsonObject){
+  var jsonString = JSON.stringify(jsonObject);
   var request = new XMLHttpRequest();
   request.open("POST", url);
   request.setRequestHeader("Content-Type", "application/json");
