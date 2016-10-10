@@ -9,11 +9,32 @@ var DiaryEntry = function(options){
 
 DiaryEntry.prototype.save = function(){
   var apiRequester = new ApiRequester();
-  var url= "http://localhost:3000/api/diary"
-  console.log(apiRequester)
-  apiRequester.makePostRequest(url, {
-    "diary": this
-  })
+  var url= "http://localhost:3000/api/diary";
+  apiRequester.makePostRequest(url, {"diary": this }, function() {
+    window.location.reload();
+  });
 }
+
+DiaryEntry.prototype.parseToDiaryEntries = function(jsonArray){
+  var entries = []
+  jsonArray.forEach(function(entry){
+    entries.push(new DiaryEntry(entry))
+  })
+  return entries;
+}
+
+DiaryEntry.prototype.all = function(callback){
+  var apiRequester = new ApiRequester();
+  var url = "http://localhost:3000/api/diary";
+  var self = this;
+  apiRequester.makeRequest(url, function(req,res){
+    if(this.status !== 200);
+    var jsonString = this.responseText;
+    var jsonResponse = JSON.parse(jsonString);
+    var diaryFeed = self.parseToDiaryEntries(jsonResponse);
+    callback(diaryFeed);
+  });
+};
+
 
 module.exports = DiaryEntry;

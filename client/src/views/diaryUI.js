@@ -1,9 +1,9 @@
-var DiaryFeed = require("../models/diaryFeed")
+var DiaryEntry = require("../models/diaryEntry")
 
 
 var DiaryFeedUI = function(){
-  var diaryFeed = new DiaryFeed();
-  diaryFeed.all(this.render);
+  var diaryEntry = new DiaryEntry({});
+  diaryEntry.all(this.render);
 };
 
 DiaryFeedUI.prototype.render = function( diaryFeed ) { 
