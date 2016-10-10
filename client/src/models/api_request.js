@@ -14,4 +14,13 @@ ApiRequest.prototype.makeRequest = function(url, callback) {
   request.send();
 }
 
+ApiRequest.prototype.makePostRequest = function(url, jsonObject){
+  var jsonString = JSON.stringify(jsonObject);
+  var request = new XMLHttpRequest();
+  request.open("POST", url);
+  request.setRequestHeader("Content-Type", "application/json");
+  request.send(jsonString);
+}
+
+
 module.exports = ApiRequest;

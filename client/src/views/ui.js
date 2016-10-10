@@ -1,6 +1,8 @@
 var WeatherUI = require( './weatherUI' );
 var NewsFeedUI = require( './newsFeedUI' );
 var DiaryUI = require('./diaryUI')
+var DiaryFormUI = require( './diaryFormUI' );
+
 
 var UI = function() {
   var body = document.querySelector('body')
@@ -8,11 +10,13 @@ var UI = function() {
   container.setAttribute("id", "container")
   body.appendChild(container)
 
+
   new WeatherUI();
   new NewsFeedUI();
   new DiaryUI();
-  // newsFeed.all( this.newsRender );
-  // weather.get( this.weatherRender );
+  new DiaryFormUI();
+  newsFeed.all( this.newsRender );
+  weather.get( this.weatherRender );
 }
 
 module.exports = UI;

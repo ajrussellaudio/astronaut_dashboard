@@ -6,7 +6,6 @@ var WeatherUI = function(){
   weatherApi.get(this.render);
 }
 
-
 WeatherUI.prototype.render = function( weather ) {
   var div = document.createElement("div");
   div.setAttribute("id", "weather-widget");
