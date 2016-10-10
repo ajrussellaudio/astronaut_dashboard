@@ -2,7 +2,7 @@ var DiaryEntry = require("../models/diaryEntry")
 
 
 var DiaryFeedUI = function(){
-  var diaryEntry = new DiaryEntry();
+  var diaryEntry = new DiaryEntry({});
   diaryEntry.all(this.render);
 };
 
