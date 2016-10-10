@@ -17,7 +17,11 @@ var DiaryEntryUI = function() {
   submit.type = 'button'
   submit.value = "Submit";
   submit.onclick = function(){
-    this.buttonClickHandler(titleInput, contentInput, dateInput);
+    this.buttonClickHandler(new DiaryEntry({
+      "title": titleInput.value, 
+      "content": contentInput.value, 
+      "date": dateInput.value
+    }));
   }.bind(this);
 
   //THEN
@@ -37,18 +41,9 @@ var DiaryEntryUI = function() {
   body.appendChild( divDiary );
 }
 
-
-DiaryEntryUI.prototype.buttonClickHandler = function(titleInput, contentInput, dateInput) {
-    var jsonDiaryEntry = {
-      title: titleInput.value,
-      content: contentInput.value,
-      date: dateInput.value
-    }
-    var diaryEntry = new DiaryEntry(jsonDiaryEntry);
-    diaryEntry.save();
-
-    // var jsonDiaryString = JSON.stringify(jsonDiaryEntry);
+DiaryEntryUI.prototype.buttonClickHandler = function(diaryEntry){
     console.log(diaryEntry);
+    diaryEntry.save();
 }
 
 module.exports = DiaryEntryUI;
