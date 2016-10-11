@@ -11,14 +11,22 @@ ImageUI.prototype.render = function(images) {
   div.setAttribute("class", "dashboard-widget");
 
   images.forEach(function(image) {
-    var pTag = document.createElement('p');
-    pTag.innerText = image.name;
+    console.log(image);
+    var pTag = document.createElement('h4');
+    pTag.setAttribute("class", "caption");
+    pTag.innerText = image.location;
 
-    var img = document.createElement('img');
-    img.src = image.url;
+    var imgDiv = document.createElement('div');
+    imgDiv.style.backgroundImage = 'url('+ image.smallurl + ')'
+    imgDiv.setAttribute("class", "galleryImage");
+    // img.src = image.thumburl;
 
-    div.appendChild(pTag);
-    div.appendChild(img);
+    var link = document.createElement('a');
+    link.href = image.fullurl;
+
+    imgDiv.appendChild(pTag);
+    link.appendChild(imgDiv);
+    div.appendChild(link);
   });
 
   var widgets = document.querySelector("#widgets");

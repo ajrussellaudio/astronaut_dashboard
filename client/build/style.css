@@ -17,6 +17,28 @@ body{
   display:flex;
 }
 
+.caption {
+  margin: 20px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.6;
+  width: 100%;
+  font-family: arial;
+  color: white;  
+  letter-spacing: -1px;  
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px; 
+}
+
+.galleryImage {
+  display: block;
+  width: 100%;
+  line-height: 100px; 
+  height: 100%;
+  background-size:cover;
+}
+
 .horizontal-divider{
   width: 100%;
   height:1px;

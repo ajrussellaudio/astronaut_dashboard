@@ -2,8 +2,11 @@ var ApiRequester = require("./api_request");
 
 var Image = function(options) {
   if(options)
-  {this.url = options.urls.thumb;
-  this.name = options.user.name;}
+  {this.thumburl = options.urls.thumb;
+  this.name = options.user.name;
+  this.location = options.user.location;
+  this.fullurl = options.urls.full;
+  this.smallurl = options.urls.small;}
 };
 
 Image.prototype.parseToImages = function(jsonResponse) {
