@@ -14,17 +14,17 @@ DiaryFeedUI.prototype.render = function( diaryFeed ) {
   div.setAttribute('class', 'dashboard-widget');
 
 
-  div.addEventListener('wheel', function(event) {
-      var deltaY = event.deltaY;
-      var contentHeight = div.scrollHeight;
-      var visibleHeight = div.offsetHeight;
-      var scrollTop = div.scrollTop;
+  // div.addEventListener('wheel', function(event) {
+  //     var deltaY = event.deltaY;
+  //     var contentHeight = div.scrollHeight;
+  //     var visibleHeight = div.offsetHeight;
+  //     var scrollTop = div.scrollTop;
 
-      if (scrollTop === 0 && deltaY < 0)
-          event.preventDefault();
-      else if (visibleHeight + scrollTop === contentHeight && deltaY > 0)
-          event.preventDefault();
-  });
+  //     if (scrollTop === 0 && deltaY < 0)
+  //         event.preventDefault();
+  //     else if (visibleHeight + scrollTop === contentHeight && deltaY > 0)
+  //         event.preventDefault();
+  // });
 
 
   //for every entry in diary feed
