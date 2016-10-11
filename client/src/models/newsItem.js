@@ -1,11 +1,13 @@
 var ApiRequester = require("./api_request")
 
 var NewsItem = function(options){
-  this.headline = options.title;
-  this.description = options.description;
-  this.url = options.url;
-  this.imageUrl = options.urlToImage;
-  this.timeStamp = options.publishedAt;
+  if(options){
+    this.headline = options.title;
+    this.description = options.description;
+    this.url = options.url;
+    this.imageUrl = options.urlToImage;
+    this.timeStamp = options.publishedAt;
+  }
 };
 
 NewsItem.prototype.parseToNewsItems = function(jsonRep){
