@@ -2,7 +2,7 @@ var ApiRequester = require("./api_request");
 
 var Image = function(options) {
   if(options)
-  {this.url = options.urls.regular;
+  {this.url = options.urls.thumb;
   this.name = options.user.name;}
 };
 
