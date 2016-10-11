@@ -32,11 +32,14 @@ HeaderUI.prototype.renderNameElement = function(contianer){
 }
 
 HeaderUI.prototype.renderNameBox = function(container){
+  // var nameInputDiv = documnet.createElement("div");
+  // nameInputDiv.setAttribute("id", "name-input-div");
   var nameInput = document.createElement("textarea");
   nameInput.setAttribute("id","name-input");
 
   var nameSubmitButton = document.createElement("div");
   nameSubmitButton.setAttribute("id","name-submit");
+  nameSubmitButton.innerText = "Submit name"
   nameSubmitButton.onclick = function(){
     this.AsstronautInfo.saveName(nameInput.value || "Scoping issue");
   }

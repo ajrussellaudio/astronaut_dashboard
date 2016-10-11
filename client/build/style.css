@@ -5,12 +5,55 @@ body{
   margin-left: 20px;
 }
 
+/*header styling options*/
 #header{
+  border:1px solid #0000aa;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
   background-color: black;
-  color:white;
   margin-bottom: 10px;
   height: 9vh;
 }
+
+
+#name-container{
+  height:80%;
+  margin:5px;
+  display:flex;
+  flex-direction: row;
+}
+#name-input{
+  background-color: #000022;
+  color:white;
+  margin:5px;
+  font-size: 24px;
+  padding: 5px;
+  height:50%;
+
+
+}
+
+#name-submit{
+  margin:5px;
+  box-shadow: 3px 4px 0px 0px #1564ad;
+  background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+  border-radius:5px;
+  border:1px solid #337bc4;
+  cursor:pointer;
+  color:#ffffff;
+  font-size:17px;
+  font-weight:bold;
+  padding:12px 20px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #528ecc;
+}
+
+.myButton:hover {
+  background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+}
+
 
 #container {
   height:85vh;
@@ -63,7 +106,6 @@ body{
   background-color: #aaaaff;
   border:2px solid green;
 }
-
 
 
 /* Styling for diary entry form input*/
