@@ -1,41 +1,44 @@
 var IssPosition = require( '../models/issPosition' );
+var Map = require('../models/map')
 
-var IssPositionUI = function(){
-  var issPosition = new IssPosition({});
-  issPosition.get(function(data){console.log(data)});
-  
-}
-
-
-var Map = function(container, issPosition, zoom){
+var Map = function(container, coords, zoom){
   this.googleMap = new google.maps.Map(container, {
-    center: issPosition,
+    center: coords,
     zoom: zoom
   });
-}
+},
 
 Map.prototype = {
-  addMarker: function(issPosition){
-    var marker = new google.maps.Marker({
-      position: issPosition,
-      map: this.googleMap,
-      animation: google.maps.Animation.DROP
-    });
-    return marker;
-  },
+  addMarker: function(coords){
+  var marker = new google.maps.Marker({
+  position: coords,
+  map: this.googleMap,
+  animation: google.maps.Animation.DROP
+  });
 
-//added for future expansion
-  // addInfoWindow: function(latLng, text) {
-  //   var marker = this.addMarker(latLng);
-  //   marker.addListener('click', function() {
-  //     var infowindow = new google.maps.InfoWindow({
-  //         content: text
-  //       });
-  //     infowindow.open(this.map, marker); 
-  //   });
-  // },
+  return marker;
+},
+
+// addInfoWindow: function(latLng, text) { //not sure we want to add this yet.
+//   var marker = this.addMarker(latLng);
+//   marker.addListener('click', function() {
+//   var infowindow = new google.maps.InfoWindow({
+//     content: text
+//   });
+//   infowindow.open(this.map, marker); 
+//   });
+// },
+    
+geoLocate: function(){
+  navigator.geolocation.getCurrentPosition(function(position) {
+  var center = {
+    lat: position.coords.latitude, 
+    lng: position.coords.longitude}; 
+  this.googleMap.setCenter(center); 
+  this.addMarker(center);
+  }.bind(this)); 
+
+
   
-}
-
 
 module.exports = IssPositionUI;

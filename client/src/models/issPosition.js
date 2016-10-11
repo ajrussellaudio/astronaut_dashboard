@@ -16,8 +16,11 @@ IssPosition.prototype.get = function( callback ) {
     var jsonString = this.responseText;
     var issPosObj = JSON.parse( jsonString );
     var issPos = self.populateIssPos( issPosObj );
-    callback( issPos );
-
+   var center = {
+     lat: issPos.latitude, 
+     long: issPos.longitude
+    }
+    callback( centre );
   });
 } 
 
@@ -25,7 +28,6 @@ IssPosition.prototype.populateIssPos = function(issPosObj) {
      console.log("gets here?")
      var issPos = new IssPosition(issPosObj['iss_position']);
      return issPos;
-     
    }
 
 module.exports = IssPosition;
