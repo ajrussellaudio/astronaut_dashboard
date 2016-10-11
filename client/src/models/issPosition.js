@@ -16,12 +16,14 @@ IssPosition.prototype.get = function( callback ) {
     var jsonString = this.responseText;
     var issPosObj = JSON.parse( jsonString );
     var issPos = self.populateIssPos( issPosObj );
+    
     var mapPosition = {
       lat: issPos.latitude,
       long: issPos.longitude
     }
+    map.setMarker(mapPosition);
     callback( mapPosition );
-    console.log(mapPosition);
+    
   });
 } 
 

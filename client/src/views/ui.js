@@ -1,13 +1,11 @@
 var WeatherUI = require( './weatherUI' );
 var NewsFeedUI = require( './newsFeedUI' );
 var DiaryUI = require('./diaryUI')
-<<<<<<< HEAD
-var DiaryFormUI = require( './diaryFormUI' )
-=======
 var DiaryFormUI = require( './diaryFormUI' );
 var ImageUI = require( './imageUI' );
+var MapUI = require('./IssPositionUI')
 
->>>>>>> develop
+
 
 var UI = function() {
   var body = document.querySelector('body');
@@ -29,17 +27,16 @@ var UI = function() {
   body.appendChild(header);
   body.appendChild(container);
   container.appendChild(widgets);
-
-<<<<<<< HEAD
-=======
   this.setStyle("style");
 
->>>>>>> develop
-  new WeatherUI();
+
+  // new WeatherUI();
   new NewsFeedUI();
   new DiaryUI();
   new DiaryFormUI();
   new ImageUI();
+  new MapUI();
+
   
 };
 
