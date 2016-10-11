@@ -1,9 +1,11 @@
 var ApiRequester = require("./api_request")
 
 var DiaryEntry = function(options){
-  this.title = options.title;
-  this.content = options.content;
-  this.date = options.date
+  if (options){
+    this.title = options.title;
+    this.content = options.content;
+    this.date = options.date;
+  }
 }
 
 
@@ -13,6 +15,7 @@ DiaryEntry.prototype.save = function(){
   var jsonObject = { "diary": this };
   console.log( jsonObject );
   apiRequester.makePostRequest(url, jsonObject, function() {
+    // refactor to not require reload
     window.location.reload();
   });
 }
