@@ -7,9 +7,12 @@ var NewsFeedUI = function(){
 }
 
 NewsFeedUI.prototype.render = function(news){
-  var div = document.createElement( "div" );
+  var div = document.getElementById("news-feed")
+  if( !div ) div = document.createElement( "div" );
   div.setAttribute( "id", "news-feed" );
-
+  while (div.firstChild) {
+      div.removeChild(div.firstChild);
+  }
   var children = [];
 
   news.forEach( function( newsItem ) {
