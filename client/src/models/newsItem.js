@@ -19,16 +19,16 @@ NewsItem.prototype.parseToNewsItems = function(jsonRep){
   return newsFeed;
 }
 
-NewsItem.prototype.all = function(callback){
+NewsItem.prototype.all = function(source, callback){
   var apiRequester = new ApiRequester();
-  var url = "https://newsapi.org/v1/articles?source=abc-news-au&apiKey=3783803bc3a8459792d27a6ec2340bb7";
+  var url = "https://newsapi.org/v1/articles?source=" + source + "&apiKey=3783803bc3a8459792d27a6ec2340bb7";
   var self = this;
   apiRequester.makeRequest(url, function(){
     // console.log(this.status);
     if(this.status !== 200) return;
     var jsonString = this.responseText;
     var jsonResponse = JSON.parse(jsonString);
-    newsFeed = self.parseToNewsItems(jsonResponse);
+    var newsFeed = self.parseToNewsItems(jsonResponse);
     callback(newsFeed);
   })   
 }

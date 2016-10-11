@@ -1,12 +1,12 @@
 var NewsItem = require( '../models/newsItem' );
+var NewsSource = require( '../models/newsSource' );
 
 var NewsFeedUI = function(){
-  var newsItem = new NewsItem();
-  newsItem.all(this.render);
+  var newsSource = new NewsSource();
+  newsSource.all( this.renderSources );
 }
 
 NewsFeedUI.prototype.render = function(news){
-  console.log(news)
   var div = document.createElement( "div" );
   div.setAttribute( "id", "news-feed" );
 
@@ -25,8 +25,7 @@ NewsFeedUI.prototype.render = function(news){
     itemDiv.appendChild( description );
 
     var img = document.createElement( "img" );
-    img.width = 70;
-    img.height = 70;
+    img.width = 120;
     img.src = newsItem.imageUrl;
     itemDiv.appendChild( img );
 
@@ -35,6 +34,37 @@ NewsFeedUI.prototype.render = function(news){
   
   var container = document.querySelector("#container");
   container.appendChild( div )
+}
+
+NewsFeedUI.prototype.populateFeed = function( source ) {  
+  var newsItem = new NewsItem();
+  newsItem.all(source, this.render);
+}
+
+NewsFeedUI.prototype.renderSources = function( sources ) {
+  console.log(sources);
+
+  var div = document.createElement( "div" );
+  div.setAttribute( "id", "news-sources" );
+
+  var dropDown = document.createElement("select");
+
+  sources.forEach( function(source) {
+    var option = document.createElement("option");
+    option.value = source.id;
+    option.innerText = source.name;
+    dropDown.options.add( option );
+  });
+
+  dropDown.onchange = function(item) {
+    console.log( this );
+    this.populateFeed( dropDown.value );
+  }.bind(NewsFeedUI.prototype)
+
+  div.appendChild( dropDown );
+
+  var container = document.querySelector("#container");
+  container.appendChild( div );
 }
 
 module.exports = NewsFeedUI;
