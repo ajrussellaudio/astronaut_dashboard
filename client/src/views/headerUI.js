@@ -1,32 +1,19 @@
-var AsstronautInfo = require("../models/AsstronautInfo")
+var AsstronautInfo = require("../models/AsstronautInfo");
+var Weather = require("../models/weather");
 
 var HeaderUI = function(){
   this.asstronautInfo = new AsstronautInfo();
+  this.weatherInfo = new Weather();
+  this.headerContainer = document.querySelector("#header");
 
-  this.headerContainer = document.querySelector("#header")
   this.renderName();
+  this.renderClock();
 
-  this.renderClock(this.headerContainer);
-  // this.renderWeather(headerContainer);
-}
-
-
-HeaderUI.prototype.renderClock = function(container){
+  var weatherDiv = document.createElement('div');
+  weatherDiv.setAttribute("id","weather-div");
+  this.headerContainer.appendChild(weatherDiv);
+  this.weatherInfo.get(this.renderWeather);
   
-  var date = new Date();
-  var timeString = date.toUTCString().replace(" GMT", "Z")
-
-  var clockDiv = document.createElement("div");
-  clockDiv.setAttribute("id","clock-div");
-  clockDiv.innerText = timeString;
-
-  setInterval(function(){
-
-      clockDiv.innerText = new Date().toUTCString().replace(" GMT", "Z")
-  }, 1000);
-
-  container.appendChild(clockDiv)
-
 }
 
 
@@ -83,7 +70,31 @@ HeaderUI.prototype.renderNameBox = function(container){
   container.appendChild(nameSubmitButton)
 }
 
+HeaderUI.prototype.renderWeather = function(weather){
+  weatherContainer = document.querySelector("#weather-div")
 
-HeaderUI.prototype.renderWeather = function(container){}
+
+  var icon = document.createElement("img");
+  icon.src = "http://openweathermap.org/img/w/"+ weather.icon +".png";
+  weatherContainer.appendChild(icon);
+
+  var description = document.createElement("p");
+  description.innerText = weather.description[0].toUpperCase() + weather.description.slice(1);
+  weatherContainer.appendChild(description)
+}
+
+HeaderUI.prototype.renderClock = function(){
+  var date = new Date();
+  var timeString = date.toUTCString().replace(" GMT", "Z")
+
+  var clockDiv = document.createElement("div");
+  clockDiv.setAttribute("id","clock-div");
+  clockDiv.innerText = timeString;
+
+  setInterval(function(){
+      clockDiv.innerText = new Date().toUTCString().replace(" GMT", "Z")
+  }, 1000);
+  this.headerContainer.appendChild(clockDiv)
+}
 
 module.exports = HeaderUI;

@@ -24,7 +24,7 @@ var UI = function() {
 
   this.setStyle("style");
 
-  new WeatherUI();
+  // new WeatherUI();
   new NewsFeedUI();
   new DiaryUI();
   new DiaryFormUI();

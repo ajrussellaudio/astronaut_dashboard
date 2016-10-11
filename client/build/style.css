@@ -58,6 +58,12 @@ body{
   color: white;
 }
 
+#weather-div{
+  color:white;
+  display:flex;
+  flex-direction: row;
+}
+
 /************************************/
 
 /*Bulk of page*/
