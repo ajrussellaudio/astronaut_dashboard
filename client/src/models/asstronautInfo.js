@@ -1,4 +1,4 @@
-var AsstronomerInfo = function(options){
+var AsstronomerInfo = function(){
   this.name = this.getNameFromStorage();
   this.publication = this.getPublicationFromStorage();
 }

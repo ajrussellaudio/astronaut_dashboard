@@ -11,13 +11,12 @@ body{
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-around;
   background-color: black;
   margin-bottom: 10px;
   height: 9vh;
 }
-
-
+/*Name styles*/
 #name-container{
   color:white;
   height:80%;
@@ -34,12 +33,10 @@ body{
   padding: 5px;
   height:50%;
 }
-
 #name-header{
   line-height:0px;
   font-size:34px;
 }
-
 #name-submit{
   margin:5px;
   box-shadow: 3px 4px 0px 0px #1564ad;
@@ -55,20 +52,18 @@ body{
   text-shadow:0px 1px 0px #528ecc;
 }
 
-.myButton:hover {
-  background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+/*Clock styles*/
+#clock-div{
+
+  color: white;
 }
 
+/************************************/
 
+/*Bulk of page*/
 #container {
   height:85vh;
   display:flex;
-}
-
-.horizontal-divider{
-  width: 100%;
-  height:1px;
-  background-color: #000;
 }
 
 #widgets {
@@ -112,6 +107,12 @@ body{
   border:2px solid green;
 }
 
+.horizontal-divider{
+  width: 100%;
+  height:1px;
+  background-color: #000;
+}
+/*********************************/
 
 /* Styling for diary entry form input*/
 #diary-writer{
@@ -148,3 +149,5 @@ body{
   height:28px;
   width:96%;
 }
+
+
