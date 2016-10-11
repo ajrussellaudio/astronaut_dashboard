@@ -17,18 +17,22 @@ HeaderUI.prototype.renderName = function(){
   nameDiv.setAttribute("id", "name-container");
 
   if (this.asstronautInfo.name){
+    console.log(this.asstronautInfo.name)
     this.renderNameElement(nameDiv);
   } else {
+    console.log("unable to read local storage")
     this.renderNameBox(nameDiv);
   }
+
   this.headerContainer.appendChild(nameDiv);
 }
 
-HeaderUI.prototype.renderNameElement = function(contianer){
-  var h1 = document.createElement("h1");
-  h1.setAttribute("id","name-header");
-  h1.innerText = this.asstronautInfo.name;
-  container.appendChild(h1);
+HeaderUI.prototype.renderNameElement = function(container){
+  console.log(container)
+  var headName = document.createElement("p");
+  headName.setAttribute("id","name-header");
+  headName.innerText = this.asstronautInfo.name;
+  container.appendChild(headName);
 }
 
 HeaderUI.prototype.renderNameBox = function(container){
@@ -37,11 +41,16 @@ HeaderUI.prototype.renderNameBox = function(container){
   var nameInput = document.createElement("textarea");
   nameInput.setAttribute("id","name-input");
 
+
   var nameSubmitButton = document.createElement("div");
   nameSubmitButton.setAttribute("id","name-submit");
   nameSubmitButton.innerText = "Submit name"
+
+  var selfAsstronautInfo = this.asstronautInfo;
+  // var context = this.asstronautInfo;
   nameSubmitButton.onclick = function(){
-    this.AsstronautInfo.saveName(nameInput.value || "Scoping issue");
+    console.log(this);
+    selfAsstronautInfo.saveName(nameInput.value || "Scoping issue");
   }
 
   container.appendChild(nameInput);
