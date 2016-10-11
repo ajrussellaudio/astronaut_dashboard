@@ -4,13 +4,11 @@ var HeaderUI = function(){
   this.asstronautInfo = new AsstronautInfo();
 
   this.headerContainer = document.querySelector("#header")
-  this.renderName(headerContainer);
+  this.renderName();
 
-  this.renderClock(headerContainer);
-  this.renderWeather(headerContainer);
+  // this.renderClock(headerContainer);
+  // this.renderWeather(headerContainer);
 }
-
-
 
 
 HeaderUI.prototype.renderName = function(){
@@ -19,16 +17,16 @@ HeaderUI.prototype.renderName = function(){
   nameDiv.setAttribute("id", "name-container");
 
   if (this.asstronautInfo.name){
-    makeNameElement(nameDiv);
+    this.renderNameElement(nameDiv);
   } else {
-    makeNameBox(nameDiv);
+    this.renderNameBox(nameDiv);
   }
   this.headerContainer.appendChild(nameDiv);
 }
 
 HeaderUI.prototype.renderNameElement = function(contianer){
   var h1 = document.createElement("h1");
-  h1.setAttribute()
+  h1.setAttribute("id","name-header");
   h1.innerText = this.asstronautInfo.name;
   container.appendChild(h1);
 }
@@ -37,13 +35,17 @@ HeaderUI.prototype.renderNameBox = function(container){
   var nameInput = document.createElement("textarea");
   nameInput.setAttribute("id","name-input");
 
+  var nameSubmitButton = document.createElement("div");
+  nameSubmitButton.setAttribute("id","name-submit");
+  nameSubmitButton.onclick = function(){
+    this.AsstronautInfo.saveName(nameInput.value || "Scoping issue");
+  }
+
+  container.appendChild(nameInput);
+  container.appendChild(nameSubmitButton)
 }
-
-
-
-
 
 HeaderUI.prototype.renderClock = function(container){}
 HeaderUI.prototype.renderWeather = function(container){}
 
-new HeaderUI()
+module.exports = HeaderUI;
