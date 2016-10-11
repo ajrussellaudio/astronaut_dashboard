@@ -2,7 +2,7 @@ var Weather = require( '../models/weather' );
 
 
 var WeatherUI = function(){
-  var weather = new Weather({});
+  var weather = new Weather();
   weather.get(this.render);
 }
 
@@ -10,6 +10,11 @@ WeatherUI.prototype.render = function( weather ) {
   var div = document.createElement("div");
   div.setAttribute("id", "weather");
   div.setAttribute("class","dashboard-widget")
+
+  var header = document.createElement("h2")
+  header.innerText = "Weather";
+  div.appendChild(header);
+
 
   var icon = document.createElement("img");
   icon.src = "http://openweathermap.org/img/w/"+ weather.icon +".png";

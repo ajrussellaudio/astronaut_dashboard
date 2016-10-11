@@ -1,36 +1,101 @@
 html{
-  background-color: black;
+  background: linear-gradient(to right, #000000 0%,#2989d8 29%,#63ddff 32%,#207cca 35%,#000000 100%);
+}
+body{
+  margin-left: 20px;
 }
 
-*{
+#header{
+  background-color: black;
   color:white;
+  height: 9vh;
 }
 
 #container {
+  height:85vh;
   display:flex;
 }
+
+.horizontal-divider{
+  width: 100%;
+  height:1px;
+  background-color: #000;
+}
+
 #widgets {
-  overflow-y: scroll;
-  height:700px;
+  padding: 20px;
   order: 1;
+  margin-left:10px;
+  margin-right: 10px;
+  border: 1px solid #000000;
+  background-color: rgba(100,50,200,0.6);
+  overflow-y: scroll;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.dashboard-widget{
-  margin: 30px;
-  border: 1px solid magenta;
-  overflow-y: scroll;
-  height:300px;
-  width:300px;
-
-}
 
 #news-feed{
-  height:700px;
+  padding: 50px;
+  order: 0;
+  background-color: rgba(0,100,150,0.8);
   width: 400px;
   overflow-y: scroll;
-  order: 0;
+}
+
+.dashboard-widget{
+  border-radius: 10px;
+  background-color: rgba(180,180,255,0.5);
+  margin: 20px;
+  padding:10px;
+  border: 2px solid magenta;
+  overflow-y: scroll;
+  height:320px;
+  width:320px;
+  transition : border background-color 0.8s;
+}
+
+.dashboard-widget:hover{
+  background-color: #aaaaff;
+  border:2px solid green;
+}
+
+
+
+/* Styling for diary entry form input*/
+#diary-writer{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#diary-form{
+  width:100%;
+}
+#title-input{
+  margin:auto;
+}
+#content-input{
+  border-radius: 10px;
+  margin-top: 20px;
+  height:200px;
+  width:98%;
+  display:block;
+}
+#diary-submit{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  margin-top:10px;
+  height:30px;
+  width:100%;
+  background-color: white;
+}
+#diary-submit:active{
+  height:28px;
+  width:96%;
 }

@@ -1,10 +1,12 @@
 var ApiRequester = require("./api_request");
 
 var Weather = function( options ) {
-  this.id = options.id;
-  this.main = options.main;
-  this.description = options.description;
-  this.icon = options.icon;
+  if(options){
+    this.id = options.id;
+    this.main = options.main;
+    this.description = options.description;
+    this.icon = options.icon;
+  }
 }
 
 Weather.prototype.get = function( callback ) {
