@@ -38,10 +38,6 @@ a:link {
 
 }
 
-.galleryImage a {
-  text-decoration: none;
-}
-
 .galleryImage {
   display: block;
   width: 100%;
