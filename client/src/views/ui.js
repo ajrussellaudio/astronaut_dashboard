@@ -3,7 +3,12 @@ var NewsFeedUI = require( './newsFeedUI' );
 var DiaryUI = require('./diaryUI')
 var DiaryFormUI = require( './diaryFormUI' );
 var ImageUI = require( './imageUI' );
+<<<<<<< HEAD
 var HeaderUI = require('./headerUI')
+=======
+var MapUI = require('./IssPositionUI')
+
+>>>>>>> feature/issposition
 
 
 var UI = function() {
@@ -22,6 +27,7 @@ var UI = function() {
   body.appendChild(container);
   container.appendChild(widgets);
 
+
   this.setStyle("style.css");
   this.setStyle("news.css");
 
@@ -31,6 +37,8 @@ var UI = function() {
   new DiaryFormUI();
   new ImageUI();
   new HeaderUI();
+  new MapUI();
+
   
 };
 

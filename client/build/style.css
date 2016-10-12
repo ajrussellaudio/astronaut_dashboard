@@ -190,4 +190,22 @@ a:link {
   width:96%;
 }
 
+/*map styling*/
+#iss-pos{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  
+}
 
+#iss-pos-header{
+  line-height: 0px;
+  font-size: 20px
+}
+
+#iss-pos-map{
+  height: 270px;
+  width: 100%;
+}
