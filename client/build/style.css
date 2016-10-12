@@ -17,18 +17,29 @@ body{
   display:flex;
 }
 
+.imageGallery {
+  overflow: hidden;
+}
+
 .caption {
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font: bold;
+  color: white;
+  text-shadow: 2px 2px 1px #000,
+  -2px -2px 1px #000,
+  -2px 2px 1px #000,
+  2px -2px 1px #000;
   margin: 20px;
-  background-color: #ffffff;
-  border: 1px solid black;
-  opacity: 0.6;
-  width: 100%;
-  font-family: arial;
-  color: white;  
-  letter-spacing: -1px;  
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.7);
-  padding: 10px; 
+}
+
+a:link {
+  text-decoration: none;
+
+}
+
+.galleryImage a {
+  text-decoration: none;
 }
 
 .galleryImage {
@@ -37,6 +48,7 @@ body{
   line-height: 100px; 
   height: 100%;
   background-size:cover;
+
 }
 
 .horizontal-divider{
