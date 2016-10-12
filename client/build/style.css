@@ -1,19 +1,19 @@
-html{
+/*html{
   background: linear-gradient(to right, #000000 0%,#2989d8 29%,#63ddff 32%,#207cca 35%,#000000 100%);
-}
+}*/
 body{
-  margin-left: 20px;
+  background-color: #2c3e50;
+  margin: 0;
 }
 
 #header{
   background-color: black;
   color:white;
-  margin-bottom: 10px
   height: 9vh;
 }
 
 #container {
-  height:85vh;
+  height: 91vh;
   display:flex;
 }
 
@@ -72,7 +72,7 @@ a:link {
   background-color: rgba(180,180,255,0.5);
   margin: 20px;
   padding:10px;
-  border: 2px solid magenta;
+  border: 2px solid #9b59b6;
   overflow-y: scroll;
   height:320px;
   width:320px;
