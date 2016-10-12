@@ -22,8 +22,8 @@ var UI = function() {
   body.appendChild(container);
   container.appendChild(widgets);
 
-  this.setStyle("style");
-  this.setStyle("news");
+  this.setStyle("style.css");
+  this.setStyle("news.css");
 
 
   // new WeatherUI();
