@@ -39,8 +39,13 @@ MapUI.prototype.render = function( map ) {
       map.moveCenter(issPosition);
     });
     
-  }, 2500)
-   
+  }, 5000)
+  
+
+  div.ondblclick =function(){
+    console.log("doubleclick")
+    map.toggleTracer()
+  }
 
 
 }

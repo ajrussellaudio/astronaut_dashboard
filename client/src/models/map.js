@@ -8,6 +8,7 @@ var Map = function(container, coords, zoom){
     disableDefaultUI: true
   });
   this.pathTracer = [];
+  this.tracerToggle = false;
 
 }
 
@@ -23,8 +24,7 @@ Map.prototype.addMarker = function(coords){
 }
 
 Map.prototype.removePreviousPosition = function(){
-  console.log(this.pathTracer)
-  if (this.pathTracer.length > 0){
+  if (!this.tracerToggle && this.pathTracer.length > 0){
     this.pathTracer[this.pathTracer.length-1].setMap(null);
   }
 }
@@ -33,6 +33,18 @@ Map.prototype.moveCenter = function(coords){
   this.googleMap.panTo(coords);
 };
 
+Map.prototype.toggleTracer = function(){
+  this.tracerToggle = (this.tracerToggle !== true);
+  var mapChange;
+  if (this.tracerToggle){
+    mapChange = this.googleMap;
+  } else {
+    mapChange = null;
+  }
+  for (var i = 0;i<this.pathTracer.length-1;i++){
+    this.pathTracer[i].setMap(mapChange);
+  }
+}
 
 
 
