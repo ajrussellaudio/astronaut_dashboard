@@ -18,6 +18,7 @@ Weather.prototype.get = function( callback ) {
     var jsonString = this.responseText;
     var results = JSON.parse( jsonString );
     var weather = self.populateWeather( results );
+    console.log(weather)
     callback( weather );
   });
 }

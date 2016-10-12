@@ -6,15 +6,72 @@ body{
   margin: 0;
 }
 
+/*header styling options*/
 #header{
+  border:1px solid #0000aa;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
   background-color: black;
+<<<<<<< HEAD
   color:white;
+=======
+  margin-bottom: 10px;
+>>>>>>> 0b00d43ed2a5d9d2e8665ea98da09645a1a6269c
   height: 9vh;
 }
+/*Name styles*/
+#name-container{
+  color:white;
+  height:80%;
+  margin:5px;
+  margin-left: 20px;
+  display:flex;
+  flex-direction: row;
+}
+#name-input{
+  background-color: #000022;
+  color:white;
+  margin:5px;
+  font-size: 24px;
+  padding: 5px;
+  height:50%;
+}
+#name-header{
+  line-height:0px;
+  font-size:34px;
+}
+#name-submit{
+  margin:5px;
+  box-shadow: 3px 4px 0px 0px #1564ad;
+  background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+  border-radius:5px;
+  border:1px solid #337bc4;
+  cursor:pointer;
+  color:#ffffff;
+  font-size:17px;
+  font-weight:bold;
+  padding:12px 20px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #528ecc;
+}
 
+/*Clock styles*/
+#clock-div{
+
+<<<<<<< HEAD
 #container {
   height: 91vh;
+=======
+  color: white;
+}
+
+#weather-div{
+  color:white;
+>>>>>>> 0b00d43ed2a5d9d2e8665ea98da09645a1a6269c
   display:flex;
+  flex-direction: row;
 }
 
 .imageGallery {
@@ -53,6 +110,14 @@ a:link {
   background-color: #000;
 }
 
+/************************************/
+
+/*Bulk of page*/
+#container {
+  height:85vh;
+  display:flex;
+}
+
 #widgets {
   padding: 20px;
   order: 1;
@@ -67,6 +132,19 @@ a:link {
   justify-content: center;
 }
 
+<<<<<<< HEAD
+=======
+
+#news-feed{
+  border: 1px solid #000000;
+  padding: 50px;
+  order: 0;
+  background-color: rgba(0,100,150,0.8);
+  width: 400px;
+  overflow-y: scroll;
+}
+
+>>>>>>> 0b00d43ed2a5d9d2e8665ea98da09645a1a6269c
 .dashboard-widget{
   border-radius: 10px;
   background-color: rgba(180,180,255,0.5);
@@ -84,7 +162,12 @@ a:link {
   border:2px solid green;
 }
 
-
+.horizontal-divider{
+  width: 100%;
+  height:1px;
+  background-color: #000;
+}
+/*********************************/
 
 /* Styling for diary entry form input*/
 #diary-writer{
@@ -121,3 +204,5 @@ a:link {
   height:28px;
   width:96%;
 }
+
+

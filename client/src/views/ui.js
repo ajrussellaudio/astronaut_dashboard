@@ -3,6 +3,7 @@ var NewsFeedUI = require( './newsFeedUI' );
 var DiaryUI = require('./diaryUI')
 var DiaryFormUI = require( './diaryFormUI' );
 var ImageUI = require( './imageUI' );
+var HeaderUI = require('./headerUI')
 
 
 var UI = function() {
@@ -10,11 +11,6 @@ var UI = function() {
 
   var header = document.createElement("div");
   header.setAttribute("id", "header");
-
-  //temporary lorem for header
-  var h1Tag = document.createElement('h3');
-  h1Tag.innerText = "Jason Parson";
-  header.appendChild(h1Tag);
 
   var container = document.createElement('div');
   container.setAttribute("id", "container");
@@ -26,14 +22,19 @@ var UI = function() {
   body.appendChild(container);
   container.appendChild(widgets);
 
+<<<<<<< HEAD
   this.setStyle("style");
   this.setStyle("news");
+=======
+  this.setStyle("style.css");
+>>>>>>> 0b00d43ed2a5d9d2e8665ea98da09645a1a6269c
 
-  new WeatherUI();
+  // new WeatherUI();
   new NewsFeedUI();
   new DiaryUI();
   new DiaryFormUI();
   new ImageUI();
+  new HeaderUI();
   
 };
 
@@ -43,7 +44,7 @@ UI.prototype.setStyle = function(href){
   var link = document.createElement("link");
   link.setAttribute("rel", "stylesheet");
   link.setAttribute("type", "text/css");
-  link.setAttribute("href", href + ".css");
+  link.setAttribute("href", href);
   head.appendChild(link);
 
 }
