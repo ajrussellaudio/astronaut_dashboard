@@ -9,7 +9,7 @@ var NewsSource = function( options ) {
 
 NewsSource.prototype.all = function( callback ) {
   var apiRequester = new ApiRequester();
-  var url = "https://newsapi.org/v1/sources?country=gb&category=general";
+  var url = "https://newsapi.org/v1/sources?language=en&country=gb";
   var self = this;
   apiRequester.makeRequest( url, function() {
     if(this.status !== 200) return;
