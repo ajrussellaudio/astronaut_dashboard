@@ -15,7 +15,7 @@ MapUI.prototype.render = function( map ) {
   var widget = document.querySelector("#widgets");
   widget.appendChild(div);
   var coords = {lat: 0, lng:0}
-  var map = new Map(div, coords, 10);
+  var map = new Map(div, coords, 5);
   var issPosition = new IssPosition();
   
   setInterval(function(){
