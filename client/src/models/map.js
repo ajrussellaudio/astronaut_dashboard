@@ -24,8 +24,12 @@ Map.prototype.addMarker = function(coords){
 }
 
 Map.prototype.removePreviousPosition = function(){
-  if (!this.tracerToggle && this.pathTracer.length > 0){
-    this.pathTracer[this.pathTracer.length-1].setMap(null);
+  if (this.pathTracer.length > 0){
+    var previousMarker = this.pathTracer[this.pathTracer.length-1]
+     previousMarker.setIcon("http://www.aialosangeles.org/images/map-dot.png");
+    if(!this.tracerToggle){
+      previousMarker.setMap(null);
+    }
   }
 }
 
