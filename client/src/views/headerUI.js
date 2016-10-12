@@ -13,14 +13,7 @@ var HeaderUI = function(){
   weatherDiv.setAttribute("id","weather-div");
   this.headerContainer.appendChild(weatherDiv);
   this.weatherInfo.get(this.renderWeather);
-  
 }
-
-
-
-
-
-
 
 // Functions to render name to header
 HeaderUI.prototype.renderName = function(){
@@ -48,18 +41,14 @@ HeaderUI.prototype.renderNameElement = function(container){
 }
 
 HeaderUI.prototype.renderNameBox = function(container){
-  // var nameInputDiv = documnet.createElement("div");
-  // nameInputDiv.setAttribute("id", "name-input-div");
   var nameInput = document.createElement("textarea");
   nameInput.setAttribute("id","name-input");
-
 
   var nameSubmitButton = document.createElement("div");
   nameSubmitButton.setAttribute("id","name-submit");
   nameSubmitButton.innerText = "Submit name"
 
   var selfAsstronautInfo = this.asstronautInfo;
-  // var context = this.asstronautInfo;
   nameSubmitButton.onclick = function(){
     console.log(this);
     selfAsstronautInfo.saveName(nameInput.value);
@@ -72,8 +61,7 @@ HeaderUI.prototype.renderNameBox = function(container){
 
 HeaderUI.prototype.renderWeather = function(weather){
   weatherContainer = document.querySelector("#weather-div")
-
-
+  
   var icon = document.createElement("img");
   icon.src = "http://openweathermap.org/img/w/"+ weather.icon +".png";
   weatherContainer.appendChild(icon);

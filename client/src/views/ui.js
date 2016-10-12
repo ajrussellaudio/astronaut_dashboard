@@ -22,7 +22,7 @@ var UI = function() {
   body.appendChild(container);
   container.appendChild(widgets);
 
-  this.setStyle("style");
+  this.setStyle("style.css");
 
   // new WeatherUI();
   new NewsFeedUI();
@@ -39,7 +39,7 @@ UI.prototype.setStyle = function(href){
   var link = document.createElement("link");
   link.setAttribute("rel", "stylesheet");
   link.setAttribute("type", "text/css");
-  link.setAttribute("href", href + ".css");
+  link.setAttribute("href", href);
   head.appendChild(link);
 
 }
