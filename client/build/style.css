@@ -59,6 +59,8 @@ body{
 }
 
 #weather-div{
+  display:flex;
+  flex-direction: row;
   color:white;
 }
 
