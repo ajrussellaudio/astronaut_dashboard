@@ -1,8 +1,9 @@
-html{
+/*html{
   background: linear-gradient(to right, #000000 0%,#2989d8 29%,#63ddff 32%,#207cca 35%,#000000 100%);
-}
+}*/
 body{
-  margin-left: 20px;
+  background-color: #2c3e50;
+  margin: 0;
 }
 
 /*header styling options*/
@@ -13,7 +14,7 @@ body{
   align-items: center;
   justify-content: space-around;
   background-color: black;
-  margin-bottom: 10px;
+  color:white;
   height: 9vh;
 }
 /*Name styles*/
@@ -54,12 +55,17 @@ body{
 
 /*Clock styles*/
 #clock-div{
-
   color: white;
 }
 
 #weather-div{
   color:white;
+}
+
+
+
+#container {
+  height: 91vh;
   display:flex;
   flex-direction: row;
 }
@@ -122,22 +128,12 @@ a:link {
   justify-content: center;
 }
 
-
-#news-feed{
-  border: 1px solid #000000;
-  padding: 50px;
-  order: 0;
-  background-color: rgba(0,100,150,0.8);
-  width: 400px;
-  overflow-y: scroll;
-}
-
 .dashboard-widget{
   border-radius: 10px;
   background-color: rgba(180,180,255,0.5);
   margin: 20px;
   padding:10px;
-  border: 2px solid magenta;
+  border: 2px solid #9b59b6;
   overflow-y: scroll;
   height:320px;
   width:320px;
