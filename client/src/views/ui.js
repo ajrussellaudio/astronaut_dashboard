@@ -27,6 +27,7 @@ var UI = function() {
   container.appendChild(widgets);
 
   this.setStyle("style");
+  this.setStyle("news");
 
   new WeatherUI();
   new NewsFeedUI();

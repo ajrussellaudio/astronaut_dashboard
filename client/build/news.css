@@ -1,0 +1,10 @@
+
+
+
+#news-feed{
+  padding: 50px;
+  order: 0;
+  background-color: rgba(0,100,150,0.8);
+  width: 400px;
+  overflow-y: scroll;
+}

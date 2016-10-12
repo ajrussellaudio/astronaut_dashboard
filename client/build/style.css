@@ -67,15 +67,6 @@ a:link {
   justify-content: center;
 }
 
-
-#news-feed{
-  padding: 50px;
-  order: 0;
-  background-color: rgba(0,100,150,0.8);
-  width: 400px;
-  overflow-y: scroll;
-}
-
 .dashboard-widget{
   border-radius: 10px;
   background-color: rgba(180,180,255,0.5);
