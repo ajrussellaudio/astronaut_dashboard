@@ -2,7 +2,9 @@ var DiaryEntry = require( '../models/diaryEntry.js' );
 
 var DiaryEntryUI = function() {
 
-  this.getTimeStamp();
+  var header = document.createElement("div")
+  header.setAttribute("id", "journal-header")
+  header.innerText = "Captains Log";
   
   var titleLabel = document.createElement("label");
   titleLabel.setAttribute("for", "title");
@@ -58,6 +60,7 @@ var DiaryEntryUI = function() {
   divDiary.id = "diary-writer";
   divDiary.setAttribute("class", "dashboard-widget");
 
+  divDiary.appendChild(header);
   divDiary.appendChild(form);
 
   var widgetContainer = document.querySelector( "#widgets" );

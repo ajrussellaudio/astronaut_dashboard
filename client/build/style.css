@@ -5,16 +5,63 @@ body{
   margin-left: 20px;
 }
 
+/*header styling options*/
 #header{
+  border:1px solid #0000aa;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
   background-color: black;
-  color:white;
-  margin-bottom: 10px
+  margin-bottom: 10px;
   height: 9vh;
 }
-
-#container {
-  height:85vh;
+/*Name styles*/
+#name-container{
+  color:white;
+  height:80%;
+  margin:5px;
+  margin-left: 20px;
   display:flex;
+  flex-direction: row;
+}
+#name-input{
+  background-color: #000022;
+  color:white;
+  margin:5px;
+  font-size: 24px;
+  padding: 5px;
+  height:50%;
+}
+#name-header{
+  line-height:0px;
+  font-size:34px;
+}
+#name-submit{
+  margin:5px;
+  box-shadow: 3px 4px 0px 0px #1564ad;
+  background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+  border-radius:5px;
+  border:1px solid #337bc4;
+  cursor:pointer;
+  color:#ffffff;
+  font-size:17px;
+  font-weight:bold;
+  padding:12px 20px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #528ecc;
+}
+
+/*Clock styles*/
+#clock-div{
+
+  color: white;
+}
+
+#weather-div{
+  color:white;
+  display:flex;
+  flex-direction: row;
 }
 
 .imageGallery {
@@ -53,6 +100,14 @@ a:link {
   background-color: #000;
 }
 
+/************************************/
+
+/*Bulk of page*/
+#container {
+  height:85vh;
+  display:flex;
+}
+
 #widgets {
   padding: 20px;
   order: 1;
@@ -69,6 +124,7 @@ a:link {
 
 
 #news-feed{
+  border: 1px solid #000000;
   padding: 50px;
   order: 0;
   background-color: rgba(0,100,150,0.8);
@@ -93,7 +149,12 @@ a:link {
   border:2px solid green;
 }
 
-
+.horizontal-divider{
+  width: 100%;
+  height:1px;
+  background-color: #000;
+}
+/*********************************/
 
 /* Styling for diary entry form input*/
 #diary-writer{
@@ -130,3 +191,5 @@ a:link {
   height:28px;
   width:96%;
 }
+
+
