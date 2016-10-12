@@ -1,5 +1,5 @@
 var IssPosition = require( '../models/issPosition' );
-var Map = require('./map')
+var Map = require('../models/map')
 
 var MapUI = function(){
   
@@ -30,7 +30,7 @@ MapUI.prototype.render = function( map ) {
 
   // setting up map and listener
   var coords = {lat: 0, lng:0};
-  var map = new Map(mapDiv, coords, 5);
+  var map = new Map(mapDiv, coords, 3);
   var issPosition = new IssPosition();
   setInterval(function(){
     issPosition.get(function(issPosition){
