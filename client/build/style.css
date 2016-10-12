@@ -14,11 +14,7 @@ body{
   align-items: center;
   justify-content: space-around;
   background-color: black;
-<<<<<<< HEAD
   color:white;
-=======
-  margin-bottom: 10px;
->>>>>>> 0b00d43ed2a5d9d2e8665ea98da09645a1a6269c
   height: 9vh;
 }
 /*Name styles*/
@@ -59,17 +55,19 @@ body{
 
 /*Clock styles*/
 #clock-div{
-
-<<<<<<< HEAD
-#container {
-  height: 91vh;
-=======
   color: white;
 }
 
 #weather-div{
+  display:flex;
+  flex-direction: row;
   color:white;
->>>>>>> 0b00d43ed2a5d9d2e8665ea98da09645a1a6269c
+}
+
+
+
+#container {
+  height: 91vh;
   display:flex;
   flex-direction: row;
 }
@@ -132,19 +130,6 @@ a:link {
   justify-content: center;
 }
 
-<<<<<<< HEAD
-=======
-
-#news-feed{
-  border: 1px solid #000000;
-  padding: 50px;
-  order: 0;
-  background-color: rgba(0,100,150,0.8);
-  width: 400px;
-  overflow-y: scroll;
-}
-
->>>>>>> 0b00d43ed2a5d9d2e8665ea98da09645a1a6269c
 .dashboard-widget{
   border-radius: 10px;
   background-color: rgba(180,180,255,0.5);
