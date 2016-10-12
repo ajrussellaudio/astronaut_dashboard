@@ -2,8 +2,8 @@ var ApiRequester = require("./api_request");
 
 var IssPosition = function( options ) {
   if(options){
-  this.lat = options.latitude;
-  this.long = options.longitude;
+  this.lat = options.iss_position.latitude;
+  this.lng = options.iss_position.longitude;
   }
 }
 
@@ -16,19 +16,13 @@ IssPosition.prototype.get = function( callback ) {
     var jsonString = this.responseText;
     var issPosObj = JSON.parse( jsonString );
     var issPos = self.populateIssPos( issPosObj );
-    
-    var mapPosition = {
-      lat: issPos.latitude,
-      long: issPos.longitude
-    }
-    map.setMarker(mapPosition);
-    callback( mapPosition );
+    callback( issPos );
     
   });
 } 
 
 IssPosition.prototype.populateIssPos = function(issPosObj) {
-   var issPos = new IssPosition(issPosObj['iss_position']);
+   var issPos = new IssPosition(issPosObj);
    return issPos;
  }
 

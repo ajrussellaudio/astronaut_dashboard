@@ -8,6 +8,7 @@ var Map = function(container, coords, zoom){
 }
 
 Map.prototype.addMarker = function(coords){
+    
     var marker = new google.maps.Marker({
       position: coords,
       map: this.googleMap,
@@ -15,6 +16,12 @@ Map.prototype.addMarker = function(coords){
     });
     return marker;
   }
+
+Map.prototype.moveCenter = function(coords){
+  this.googleMap.panTo(coords);
+};
+
+
 
 // Map.prototype.addInfoWindow =function(latLng, text) {
 //   var marker = this.addMarker(latLng);
