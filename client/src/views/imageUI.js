@@ -23,6 +23,7 @@ ImageUI.prototype.render = function(images) {
 
     var link = document.createElement('a');
     link.href = image.fullurl;
+    link.target = "_blank";
 
     imgDiv.appendChild(pTag);
     link.appendChild(imgDiv);
