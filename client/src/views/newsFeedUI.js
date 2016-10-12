@@ -63,7 +63,7 @@ NewsFeedUI.prototype.renderSources = function( sources ) {
   dropDown.options.add( defaultOption );
 
   sources.forEach( function(source) {
-    if(source.id === 'daily-mail') return; // Fuck the Daily Mail! (Alan)
+    if(source.id === 'daily-mail') return; // Fuck the Daily Mail!
     var option = document.createElement("option");
     option.value = source.id;
     option.innerText = source.name;
