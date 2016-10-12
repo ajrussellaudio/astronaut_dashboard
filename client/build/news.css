@@ -1,10 +1,10 @@
-
-
-
-#news-feed{
-  padding: 50px;
+#news-bar {
+  font-family: "Helvetica", "Arial", sans-serif;
+  width: 600px;
+  overflow: scroll;
   order: 0;
-  background-color: rgba(0,100,150,0.8);
-  width: 400px;
-  overflow-y: scroll;
+}
+
+.news-item {
+  background-color: #FFFFF3;
 }
