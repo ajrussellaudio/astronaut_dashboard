@@ -10,7 +10,6 @@ var Map = function(container, coords, zoom){
 }
 
 Map.prototype.addMarker = function(coords){
-    // var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/'
   var marker = new google.maps.Marker({
     position: coords,
     map: this.googleMap,

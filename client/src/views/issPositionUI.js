@@ -1,9 +1,8 @@
-// var MapUI = require( '../models/googleMapsApi' );
 var IssPosition = require( '../models/issPosition' );
 var Map = require('./map')
 
 var MapUI = function(){
-  // map.getLocation(this.render);
+  
   this.render()
 };
 
@@ -26,7 +25,7 @@ MapUI.prototype.render = function( map ) {
       map.moveCenter(issPosition);
     });
     
-  }, 5000)
+  }, 2500)
    
 
 
